@@ -13,7 +13,12 @@ from student import models as SMODEL
 from teacher import forms as TFORM
 from student import forms as SFORM
 from django.contrib.auth.models import User
+from django.contrib.auth import logout as auth_logout
 
+
+def logout_view(request):
+    auth_logout(request)
+    return render(request, 'exam/logout.html')
 
 
 def home_view(request):
